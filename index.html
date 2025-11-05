@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 100px;
+            background-color: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menú Principal</h1>
+        
+        <div class="menu-options">
+            <button class="btn" onclick="showContent('option1')">1. Investigar consumo por medio de pago y lugar de residencia</button>
+            <button class="btn" onclick="showContent('option2')">2. Documentación</button>
+            <button class="btn" onclick="showContent('option3')">3. Pseudocódigo y Diagrama de flujo</button>
+            <button class="btn" onclick="showContent('option4')">4. Sugerencias y mejoras</button>
+        </div>
+
+        <div id="option1" class="content">
+            <h3>Investigación de consumo</h3>
+            <p>Aquí se mostrará la investigación sobre cómo varía el consumo dependiendo del medio de pago y el lugar de residencia.</p>
+        </div>
+
+        <div id="option2" class="content hidden">
+            <h3>Documentación</h3>
+            <div id="documentacion-content">
+                <h4>Documentación del Proyecto</h4>
+                <p>Investigar cómo varía el consumo dependiendo del medio de pago y el lugar de residencia</p>
+                
+                <h4>Estructura de la Base de Datos</h4>
+                <h5>Tabla Clientes</h5>
+                <ul>
+                    <li>id_cliente: int (identificador único)</li>
+                    <li>nombre_cliente: str (nombre del cliente)</li>
+                    <li>email: str (correo electrónico)</li>
+                    <li>ciudad: str (lugar de residencia)</li>
+                    <li>fecha_alta: date (fecha de registro)</li>
+                </ul>
+
+                <h5>Tabla Ventas</h5>
+                <ul>
+                    <li>id_venta: int (identificador único)</li>
+                    <li>fecha: date (fecha de la venta)</li>
+                    <li>id_cliente: int (referencia a Clientes)</li>
+                    <li>nombre_cliente: str (nombre del cliente)</li>
+                    <li>email: str (correo electrónico)</li>
+                    <li>medio_pago: str (método de pago utilizado)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="option3" class="content hidden">
+            <h3>Pseudocódigo y Diagrama de flujo</h3>
+            <div id="pseudocodigo-content">
+                <h4>Pseudocódigo:</h4>
+                <pre># Pseudocódigo de menu_kinder.py
+
+1. Mostrar mensaje de bienvenida.
+2. Mostrar las opciones del menú:
+    - 1. Problema por investigar en Aurelion
+    - 2. Dataset
+    - 3. Pseudocódigo y Diagrama de flujo
+    - 4. Sugerencias y mejoras aplicadas con Copilot
+    - 0. Salir
+3. Repetir mientras el usuario no elija "0":
+    a. Pedir al usuario que escriba el número de su opción.
+    b. Si la opción es "0":
+        - Mostrar mensaje de despedida.
+        - Terminar el programa.
+    c. Si la opción es "1":
+        - Mostrar mensaje sobre el problema a investigar.
+    d. Si la opción es "2":
+        - Mostrar el texto "DOCUMENTACION.md:".
+        - Abrir el archivo DOCUMENTACION.md y mostrar su contenido.
+        - Mostrar un punto final.
+    e. Si la opción es "3":
+        - Mostrar mensaje indicando que el pseudocódigo y diagrama de flujo están en los archivos del proyecto.
+    f. Si la opción es "4":
+        - Mostrar mensaje sobre sugerencias y mejoras aplicadas con Copilot.
+    g. Si la opción no es válida:
+        - Mostrar mensaje de error.</pre>
+            </div>
+            <div id="diagrama-content" style="margin-top: 20px;">
+                <h4>Diagrama de flujo:</h4>
+                <pre># Diagrama de flujo de menu_kinder.py
+
+   +-----------------------------+
+   |  Inicio del programa        |
+   +-----------------------------+
+          |
+          v
+   +-----------------------------+
+   | Mostrar bienvenida y menú   |
+   +-----------------------------+
+          |
+          v
+   +-----------------------------+
+   |  Pedir opción al usuario    |
+   +-----------------------------+
+          |
+          v
+   +-----------------------------+
+   | ¿Opción es "0"?             |
+   +-----------------------------+
+          |
+    +-----+-----+
+    |           |
+    v           v
+Sí |           | No
+   |           |
+   v           v
++------------------+    +------------------+
+| Mostrar mensaje  |    | Evaluar opción   |
+| de despedida     |    | del menú         |
++------------------+    +------------------+
+   |                               |
+   |                     +---------+---------+
+   |                     |                   |
+   v                     v                   v
++------------------+    +------------------+ +------------------+
+| Terminar         |    | Mostrar          | | Mostrar mensaje  |
+| programa         |    | documentación    | | de error         |
++------------------+    +------------------+ +------------------+
+                                        |
+                                        v
+                               +------------------+
+                               | Volver al menú   |
+                               +------------------+</pre>
+            </div>
+        </div>
+
+        <div id="option4" class="content hidden">
+            <h3>Sugerencias y mejoras aplicadas con Copilot:</h3>
+            <ul>
+                <li>Mejora en la estructura del código para mayor claridad.</li>
+                <li>Inclusión de mensajes más amigables para el usuario.</li>
+                <li>Optimización del flujo de control para manejar entradas inválidas.</li>
+                <li>Mejor formato visual del menú.</li>
+                <li>Manejo de errores al leer archivos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar el contenido seleccionado y ocultar los demás
+        function showContent(optionId) {
+            // Ocultar todos los contenidos primero
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Mostrar el contenido seleccionado
+            const selectedContent = document.getElementById(optionId);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
