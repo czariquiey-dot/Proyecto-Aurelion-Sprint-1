@@ -11,4 +11,8 @@ Menú interactivo para el proyecto del curso.
 
 ## Cómo usar
 1. Abre el menú desde el enlace de GitHub Pages.
+<<<<<<< HEAD
 2. Navega por las opciones disponibles.
+=======
+2. Navega por las opciones disponibles.
+>>>>>>> dcf7c7c (Guardar cambios locales antes del rebase)
